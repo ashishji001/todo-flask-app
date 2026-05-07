@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile • TodoMaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="profile-page">
+        <div class="profile-card">
+            <h1>Profile</h1>
+
+            <div class="profile-row">
+                <div class="profile-label">Name</div>
+                <div class="profile-value">{{ user.name }}</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Email</div>
+                <div class="profile-value">{{ user.email }}</div>
+            </div>
+
+            <div class="profile-actions">
+                <a class="btn" href="/">Back to Tasks</a>
+                <form method="POST" action="/logout" class="inline-form">
+                    <button type="submit" class="btn btn-secondary">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
