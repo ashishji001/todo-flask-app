@@ -27,9 +27,9 @@ class User(db.Model):
     password_hash = db.Column(db.String(255), nullable=False)
 
 
-# # Create tables
-# with app.app_context():
-#     db.create_all()
+# Create tables
+with app.app_context():
+    db.create_all()
 
 
 # -------------------------
@@ -142,13 +142,6 @@ def profile():
 
     return render_template("profile.html", user=user)
 
-with app.app_context():
-    try:
-        db.create_all()
-    except Exception as e:
-        print(e)
-
-app = app
 
 if __name__ == "__main__":
     app.run()
